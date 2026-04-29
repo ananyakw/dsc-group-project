@@ -227,9 +227,9 @@
                 <h3>AGAINST the Proposition</h3>
 
                 <figure>
-                    <img src="AGAINST_IMAGE_FILENAME.png" alt="Bar chart showing net change in ND-GAIN index scores by income group, demonstrating that low-income countries show negative or negligible change compared to high-income countries." />
+                    <img src="graph2.png" alt="Bar chart showing net change in ND-GAIN index scores by income group, demonstrating that low-income countries show negative or negligible change compared to high-income countries." />
                     <figcaption>
-                        Low-Income Countries Present Negative Change in ND-GAIN Index Compared to More Developed Countries (2015–2023): Net change in composite ND-GAIN scores (vulnerability + readiness) reveals that while high- and middle-income countries improved, low-income countries saw a negative or near-zero net change, contradicting the notion of universal progress.
+                        Low-Income Countries Present Decrease in ND-GAIN Index Compared to Rest of World (2015–2023): Countries randomly sampled from each income class show that low-income countries (red) show negative / stagnant change in climate resilience, while medium- and high-income countries (yellow/green) consistently show positive improvement, contradicting the notion of progress regardless of income group.
                     </figcaption>
                 </figure>
 
@@ -238,28 +238,23 @@
                 <ul>
                     <li>
                         <span class="score score-earnest">Score: +2</span>
-                        <strong>Plotting net change rather than absolute values.</strong>
-                        Showing the change score instead of raw values is an honest and direct way to answer whether countries are actually improving. It prevents a reader from confusing a high absolute vulnerability score with stagnation, and ensures that the direction and magnitude of movement is the primary visual signal. This encoding directly supports the proposition by making the divergence between income groups impossible to miss.
+                        <strong>Accurate color encoding by income group.</strong>
+                        The red/yellow/green color scheme maps to low/medium/high income countries, making the income-based pattern immediately visible to viewers, and is an effective use of visual perception. The legend is displayed and the colors are intuitive as well, so a reader can verify the pattern with the data.
                     </li>
                     <li>
                         <span class="score score-earnest">Score: +2</span>
-                        <strong>Y-axis appropriately scaled and anchored at zero.</strong>
-                        Because the chart shows change scores, centering the axis at zero is the correct and honest choice. There is no truncation that would inflate the apparent size of differences — the bars' relative heights truthfully reflect the underlying magnitudes. This contrasts directly with the deceptive visualization and builds credibility with an attentive reader.
+                        <strong>Radial fan chart showing individual countries.</strong>
+                        We chose to show individual randomly sampled countries rather than averages sine we thought it was a more transparent and granular representation of the data. This choice allows readers see that nearly all red (low-income) countries and their sections point in the negative direction, making the pattern undeniable.
                     </li>
                     <li>
                         <span class="score score-earnest">Score: +1.5</span>
-                        <strong>Assertive but data-faithful title.</strong>
-                        The title "Low-Income Countries Present Negative Change in ND-GAIN Index Compared to More Developed Countries" is direct and opinionated, but it accurately describes what the data shows. Unlike the deceptive visualization's title, this one can be verified immediately by looking at the chart, which strengthens rather than undermines reader trust.
-                    </li>
-                    <li>
-                        <span class="score score-earnest">Score: +1.5</span>
-                        <strong>Single grouped bar chart for clarity across income groups.</strong>
-                        A bar chart was chosen over a line chart because the line chart version (which grouped only low-readiness countries) appeared crowded and confusing without prior knowledge of the dataset structure. The bar chart's visual contrast between income groups is much easier to parse at a glance, making the inequality in progress immediately legible to a general audience.
+                        <strong>Annotation calling attention to negative slopes for low-income countries.</strong>
+                        The annotation for low-income countries is an honest and direct interpretation that tells the reader what to conclude, with justified reasoning. This text, paired with the second annotation about high-income countries, adds nuance and added context for viewers who may not have enough pre-existing information about the issue.
                     </li>
                     <li>
                         <span class="score score-earnest">Score: +1</span>
-                        <strong>Combining vulnerability and readiness into a composite net-change score.</strong>
-                        The ND-GAIN index captures both vulnerability and readiness, and computing a single net change score integrates both dimensions honestly. This avoids the selective presentation of only vulnerability (as in the FOR visualization) and gives a more complete picture of each income group's overall climate resilience trajectory. The tradeoff is some loss of granularity, but the gain in interpretability justifies the aggregation.
+                        <strong>Subtitle includes random sampling strategy.</strong>
+                        The subtitle explicitly states that countries are "randomly sampled from each income class," which is a transparent methodological disclosure and prevents the viewer from assuming cherry-picking, while simultaneously building credibility.
                     </li>
                 </ul>
             </section>
@@ -268,13 +263,14 @@
                 <h2>Final Reflection</h2>
 
                 <p>
-                    Working on both visualizations simultaneously revealed how thin the line between persuasion and deception genuinely is. Many of the choices we made for the FOR visualization — truncating axes, selecting endpoints, using emotionally evocative icons — are techniques that appear constantly in mainstream data journalism and infographics, often without any malicious intent. What made them deceptive in our case was not the techniques themselves but the combination: each individual choice nudged the reader slightly, and together they constructed a misleading picture that the data alone does not support. What surprised us most was how natural these choices felt in the moment. When you are trying to make a point visually, it is instinctive to zoom in on the relevant range, pick the most favorable time window, and use imagery that reinforces your narrative. Recognizing that instinct as a potential source of harm required deliberate effort.
+                    By working together on both visualizations, our team realized the impact of design choices in data storytelling. Many of the choices we made for the FOR visualization, such as truncating axes, selecting only two endpoints, using evocative flame icons, are techniques that are very prevalent in news articles, propaganda, misleading social media posts etc, and so the exercise had wide-reaching implications and encouraged us to think about detecting this in the real world. We were most surprised by the combined effect of all the small choices we made in creating a deceptive visualization. On their own, each choice was easly detectable, but when put together, it was almost impossible to pick the graph apart because all the elements worked so well together.
+
                 </p>
                 <p>
-                    The AGAINST visualization was in some ways harder to design, precisely because we constrained ourselves to earnest choices. Showing net change anchored at zero, using a full and transparent axis, and writing a title that only claims what the data actually demonstrates felt less visually dramatic — and that difficulty is itself instructive. Honest visualization often requires accepting that the chart will be less immediately striking. The data rarely tells a perfectly clean story, and resisting the urge to sharpen that story through visual sleight of hand is a discipline, not a default.
+                    The AGAINST visualization was more difficult to design because we constrained ourselves to very earnest choices. The radial fan chart required us to show individual countries rather than group averages, and so we had less control over the narrative/story we were showing. In this case, we had to trust that the viewers would take away the right message from our graph. It was much less dramatic and didactic than the FOR visualization, but all the more truthful. This is a tradeoff with designing visualizations, as the choice lies between telling a persuasive story by any means necessary and telling an imperfect story that includes inconvenient details, annotations, and more context to explain the data. However, we learned the importance of these elements, because in real life, the story isn't easily digestible or black-and-white, and often contains much more nuance and critical analysis.  
                 </p>
                 <p>
-                    We now define ethical analysis and visualization as a practice of transparency about what the data can and cannot support, and honesty about the choices made at every step — from which years to include, to how axes are scaled, to what words appear in a title. The boundary between acceptable persuasion and misleading deception is not about the techniques used but about whether those techniques misrepresent the underlying data to a reader acting in good faith. Choosing a color scheme that highlights a trend is persuasion; truncating an axis so that a trivial change looks monumental is deception. The test we found most useful: would a careful reader, shown the full dataset and your design choices, feel misled? If yes, the visualization has crossed from persuasive into deceptive territory, regardless of intent.
+                    Having finished this project and worked on both extremes of the spectrum of honesty and dishonesty, we now believe that the boundary between persuasion and deception is about whether our chosen techniques misrepresent the underlying data to a viewer. Intention matters the most, so when designing a visualization, a North Star question we designed to test whether a choice was honest or not was: "Would a reader who has access to both the original dataset, the context, and the created visualization, feel that they aligned?".
                 </p>
             </section>
         </main>
