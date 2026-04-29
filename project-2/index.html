@@ -1,0 +1,279 @@
+<!doctype html>
+<html lang="en">
+    <head>
+        <title>Project 2 Report</title>
+        <style>
+            :root {
+                --color-neutral-95: hsl(220 10% 95%);
+                --color-neutral-90: hsl(220 10% 90%);
+                --color-neutral-80: hsl(220 10% 80%);
+                --color-neutral-70: hsl(220 10% 70%);
+                --color-neutral-60: hsl(220 10% 60%);
+                --color-neutral-50: hsl(220 10% 50%);
+                --color-neutral-40: hsl(220 10% 40%);
+                --color-neutral-30: hsl(220 10% 30%);
+                --color-neutral-20: hsl(220 10% 20%);
+                --color-neutral-10: hsl(220 10% 10%);
+            }
+
+            html {
+                font: 100%/1.5 system-ui;
+                counter-reset: figure;
+                background: var(--color-neutral-95);
+                max-width: min(75vw, 80em);
+                margin: 0 auto;
+            }
+
+            /* Headings */
+
+            h1,
+            h2,
+            h3,
+            h4,
+            h5,
+            h6 {
+                line-height: 1.1;
+                font-weight: 600;
+                text-wrap: balance;
+            }
+
+            h1,
+            h2 {
+                border-bottom: 1px solid var(--color-neutral-80);
+                padding-bottom: 0.2em;
+            }
+
+            h1 {
+                margin-block: 1em 0.5rem;
+                font-size: clamp(2.5em, 150% + 2vh + 2vw, 10vmin);
+                font-weight: 800;
+
+                small {
+                    display: block;
+                    width: fit-content;
+                    padding: 0.2em 0.5em;
+                    margin-inline: auto;
+                    color: white;
+                    background: var(--color-neutral-40);
+                    font-size: 40%;
+                    text-transform: uppercase;
+                    white-space: nowrap;
+                }
+            }
+
+            h2 {
+                font-size: 180%;
+                color: var(--color-neutral-30);
+            }
+
+            h3 {
+                font-size: 130%;
+            }
+
+            /* Lists */
+
+            ul,
+            ol {
+                padding-inline-start: 2em;
+            }
+
+            li {
+                &::marker {
+                    color: var(--color-neutral-40);
+                }
+
+                + li {
+                    margin-top: 0.2em;
+                }
+            }
+
+            /* Sectioning elements */
+
+            header {
+                padding-block: 1em;
+                text-align: center;
+            }
+
+            main {
+                background: white;
+                color: var(--color-neutral-20);
+                border-radius: 1rem;
+                padding: 0.1rem 2rem;
+            }
+
+            /* Figures */
+
+            figure {
+                margin: 1em 0;
+                padding: 0.5rem;
+                margin-inline: -0.5em;
+                border: 1px solid var(--color-neutral-80);
+                box-shadow: 0 0.1em 0.2em var(--color-neutral-95);
+                text-align: center;
+                background: white;
+
+                > figcaption {
+                    font: 500 75% var(--font-sans);
+                    background: var(--color-neutral-95);
+                    padding: 0.5rem;
+                    margin: -0.5rem;
+                    margin-top: 0.5rem;
+                    counter-increment: figure;
+                    text-align: left;
+
+                    &::before {
+                        content: "Figure " counter(figure) ": ";
+                        font-weight: bold;
+                        color: var(--color-neutral-40);
+                    }
+
+                    a:not(:hover, :focus, :active) {
+                        color: inherit;
+                        text-decoration: underline;
+                        text-decoration-color: color-mix(
+                            in lab,
+                            currentColor,
+                            transparent 70%
+                        );
+                    }
+                }
+            }
+
+            /* Score badge styling */
+            .score {
+                display: inline-block;
+                font-weight: 700;
+                font-size: 85%;
+                padding: 0.1em 0.45em;
+                border-radius: 0.3em;
+                margin-right: 0.4em;
+                vertical-align: middle;
+            }
+            .score-deceptive {
+                background: hsl(0 70% 92%);
+                color: hsl(0 60% 35%);
+            }
+            .score-earnest {
+                background: hsl(140 50% 90%);
+                color: hsl(140 60% 28%);
+            }
+            .score-neutral {
+                background: hsl(220 10% 90%);
+                color: hsl(220 10% 35%);
+            }
+        </style>
+    </head>
+
+    <body>
+        <header>
+            <h1>
+                <small>Project 2</small>
+                Persuasive or Deceptive Visualization?
+            </h1>
+
+            <p><strong>Ananya Wasker, Nayana Naineni, Anisha Kalgi</strong><p/>
+            <p><em>awasker@ucsd.edu, nnaineni@ucsd.edu, akalgi@ucsd.edu</em></p>
+        </header>
+
+        <main>
+            <h2>Proposition: Climate vulnerability decreases while readiness increases for all, regardless of income group.</h2>
+
+            <section>
+                <h3>FOR the Proposition</h3>
+
+                <figure>
+                    <img src="prop1.png" alt="Three side-by-side flame charts showing average ND-GAIN vulnerability scores for High, Middle, and Low Income countries in 2015 vs 2023, with each panel's y-axis truncated to exaggerate the apparent decline." />
+                    <figcaption>
+                        Reduction in Climate Vulnerability Across All Nations (2015 vs. 2023): Average ND-GAIN vulnerability scores declined across High Income (↓0.4 pts), Middle Income (↓0.8 pts), and Low Income (↓0.7 pts) country groups, suggesting universal progress regardless of economic status. Income groups based on World Bank 2026 country classifications.
+                    </figcaption>
+                </figure>
+
+                <p>Design Decisions and Rationale:</p>
+
+                <ul>
+                    <li>
+                        <span class="score score-deceptive">Score: −2</span>
+                        <strong>Truncated y-axes starting above zero.</strong>
+                        Each panel's y-axis begins just below the 2023 value rather than at zero, compressing the visible range by a large amount. This makes drops of 0.4–0.8 points (on an index that spans roughly 0 to 1) appear as massive proportional improvements. A reader skimming the chart sees the flames shrinking substantially and never registers that the absolute changes are tiny fractions of the full scale. We considered starting axes at zero but that would have made the declines nearly invisible, which would defeat the deceptive purpose.
+                    </li>
+                    <li>
+                        <span class="score score-deceptive">Score: −1.5</span>
+                        <strong>Flame icons sized to encode vulnerability scores.</strong>
+                        Using flame emoji whose visual area encodes the score is deceptive because area perception is nonlinear, so readers' eyes overestimate size differences between large and small shapes. The towering 2015 flame versus the smaller 2023 flame implies a dramatic reduction in climate threat well beyond what the numbers actually show. An alternative was standard bars, but we chose flame because their irregular shape and emotional connotations (danger, heat, crisis) amplify the magnitude of change and how viewers percieve it.
+                    </li>
+                    <li>
+                        <span class="score score-deceptive">Score: −1.5</span>
+                        <strong>Declarative, assertive title.</strong>
+                        "Reduction in Climate Vulnerability Across All Nations" states the outcome as established truth before the reader actually examines any data, which primes them to interpret everything with more confidence in the claim and reduces valid, skeptical scrutiny of the axis scales. A more neutral title like "Climate Vulnerability Scores, 2015 vs. 2023" was considered but we rejected it because it lacks the force needed to persuade audiences from the get-go.
+                    </li>
+                    <li>
+                        <span class="score score-deceptive">Score: −1</span>
+                        <strong>Showing only two endpoints (2015 vs. 2023), leaving out the full time series.</strong>
+                        Cherry-picking just the start and end years hides fluctuations, plateaus, or reversals that occurred in between that would contextualize the data. A reader cannot tell whether the decline was steady or not, since the snapshot framing implies irrefutable progress across the full period. We considered a line chart over all years but found it revealed too much volatility that undermined the proposition.
+                    </li>
+                    <li>
+                        <span class="score score-deceptive">Score: −1.5</span>
+                        <strong>Separate panels per income group with independent y-axis scales.</strong>
+                        Each income group gets its own axis with a different range (e.g., 0.344–0.358 for High Income vs. 0.554–0.568 for Low Income). This makes the visual size of the declines look roughly equivalent across groups, masking the fact that low-income countries remain at substantially higher absolute vulnerability. A reader skimming all three panels will get the impression that all groups are converging and improving equally, when in reality the gaps between them are quite big.
+                    </li>
+                </ul>
+            </section>
+
+            <section>
+                <h3>AGAINST the Proposition</h3>
+
+                <figure>
+                    <img src="AGAINST_IMAGE_FILENAME.png" alt="Bar chart showing net change in ND-GAIN index scores by income group, demonstrating that low-income countries show negative or negligible change compared to high-income countries." />
+                    <figcaption>
+                        Low-Income Countries Present Negative Change in ND-GAIN Index Compared to More Developed Countries (2015–2023): Net change in composite ND-GAIN scores (vulnerability + readiness) reveals that while high- and middle-income countries improved, low-income countries saw a negative or near-zero net change, contradicting the notion of universal progress.
+                    </figcaption>
+                </figure>
+
+                <p>Design Decisions and Rationale:</p>
+
+                <ul>
+                    <li>
+                        <span class="score score-earnest">Score: +2</span>
+                        <strong>Plotting net change rather than absolute values.</strong>
+                        Showing the change score instead of raw values is an honest and direct way to answer whether countries are actually improving. It prevents a reader from confusing a high absolute vulnerability score with stagnation, and ensures that the direction and magnitude of movement is the primary visual signal. This encoding directly supports the proposition by making the divergence between income groups impossible to miss.
+                    </li>
+                    <li>
+                        <span class="score score-earnest">Score: +2</span>
+                        <strong>Y-axis appropriately scaled and anchored at zero.</strong>
+                        Because the chart shows change scores, centering the axis at zero is the correct and honest choice. There is no truncation that would inflate the apparent size of differences — the bars' relative heights truthfully reflect the underlying magnitudes. This contrasts directly with the deceptive visualization and builds credibility with an attentive reader.
+                    </li>
+                    <li>
+                        <span class="score score-earnest">Score: +1.5</span>
+                        <strong>Assertive but data-faithful title.</strong>
+                        The title "Low-Income Countries Present Negative Change in ND-GAIN Index Compared to More Developed Countries" is direct and opinionated, but it accurately describes what the data shows. Unlike the deceptive visualization's title, this one can be verified immediately by looking at the chart, which strengthens rather than undermines reader trust.
+                    </li>
+                    <li>
+                        <span class="score score-earnest">Score: +1.5</span>
+                        <strong>Single grouped bar chart for clarity across income groups.</strong>
+                        A bar chart was chosen over a line chart because the line chart version (which grouped only low-readiness countries) appeared crowded and confusing without prior knowledge of the dataset structure. The bar chart's visual contrast between income groups is much easier to parse at a glance, making the inequality in progress immediately legible to a general audience.
+                    </li>
+                    <li>
+                        <span class="score score-earnest">Score: +1</span>
+                        <strong>Combining vulnerability and readiness into a composite net-change score.</strong>
+                        The ND-GAIN index captures both vulnerability and readiness, and computing a single net change score integrates both dimensions honestly. This avoids the selective presentation of only vulnerability (as in the FOR visualization) and gives a more complete picture of each income group's overall climate resilience trajectory. The tradeoff is some loss of granularity, but the gain in interpretability justifies the aggregation.
+                    </li>
+                </ul>
+            </section>
+
+            <section>
+                <h2>Final Reflection</h2>
+
+                <p>
+                    Working on both visualizations simultaneously revealed how thin the line between persuasion and deception genuinely is. Many of the choices we made for the FOR visualization — truncating axes, selecting endpoints, using emotionally evocative icons — are techniques that appear constantly in mainstream data journalism and infographics, often without any malicious intent. What made them deceptive in our case was not the techniques themselves but the combination: each individual choice nudged the reader slightly, and together they constructed a misleading picture that the data alone does not support. What surprised us most was how natural these choices felt in the moment. When you are trying to make a point visually, it is instinctive to zoom in on the relevant range, pick the most favorable time window, and use imagery that reinforces your narrative. Recognizing that instinct as a potential source of harm required deliberate effort.
+                </p>
+                <p>
+                    The AGAINST visualization was in some ways harder to design, precisely because we constrained ourselves to earnest choices. Showing net change anchored at zero, using a full and transparent axis, and writing a title that only claims what the data actually demonstrates felt less visually dramatic — and that difficulty is itself instructive. Honest visualization often requires accepting that the chart will be less immediately striking. The data rarely tells a perfectly clean story, and resisting the urge to sharpen that story through visual sleight of hand is a discipline, not a default.
+                </p>
+                <p>
+                    We now define ethical analysis and visualization as a practice of transparency about what the data can and cannot support, and honesty about the choices made at every step — from which years to include, to how axes are scaled, to what words appear in a title. The boundary between acceptable persuasion and misleading deception is not about the techniques used but about whether those techniques misrepresent the underlying data to a reader acting in good faith. Choosing a color scheme that highlights a trend is persuasion; truncating an axis so that a trivial change looks monumental is deception. The test we found most useful: would a careful reader, shown the full dataset and your design choices, feel misled? If yes, the visualization has crossed from persuasive into deceptive territory, regardless of intent.
+                </p>
+            </section>
+        </main>
+    <script defer src="https://static.cloudflareinsights.com/beacon.min.js/v8c78df7c7c0f484497ecbca7046644da1771523124516" integrity="sha512-8DS7rgIrAmghBFwoOTujcf6D9rXvH8xm8JQ1Ja01h9QX8EzXldiszufYa4IFfKdLUKTTrnSFXLDkUEOTrZQ8Qg==" data-cf-beacon='{"version":"2024.11.0","token":"c822b88e119346678db149ed7b7721c9","r":1,"server_timing":{"name":{"cfCacheStatus":true,"cfEdge":true,"cfExtPri":true,"cfL4":true,"cfOrigin":true,"cfSpeedBrain":true},"location_startswith":null}}' crossorigin="anonymous"></script>
+    </body>
+</html>
